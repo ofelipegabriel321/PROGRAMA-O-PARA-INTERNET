@@ -3,7 +3,7 @@
 ## Contato:
 
 - **Gmail:** ofelipeifpi@gmail.com
-- **Telefone:** (86)99922-1653
+- **Telefone (para WhatsApp/Telegram):** (86)99922-1653
 
 ## Habilidades:
 - Programar, com domínio mediano, em Python, C++ e Java;
