@@ -1,7 +1,9 @@
 # PROGRAMAÇÃO PARA INTERNET
+**Nome**: Felipe Gabriel Oliveira Lopes Araújo
 ## Contato:
 
-- Gmail: ofelipeifpi@gmail.com
+- **Gmail:** ofelipeifpi@gmail.com
+- **Telefone:** (86)99922-1653
 
 ## Habilidades:
 - Programar, com domínio mediano, em Python, C++ e Java;
