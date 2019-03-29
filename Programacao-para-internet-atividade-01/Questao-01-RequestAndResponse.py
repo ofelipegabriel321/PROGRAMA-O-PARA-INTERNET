@@ -3,19 +3,22 @@ import requests
 
 class RequestAndResponse:
     def __init__(self, url):
-        self.response = requests.get(url)
+        self.url = url
+
+    def response(self):
+        return requests.get(self.url)
 
     def status_code(self):
-        return self.response.status_code
+        return self.response().status_code
 
     def headers(self):
-        return self.response.headers
+        return self.response().headers
 
     def content_length(self):
-        return self.response.headers['Content-length']
+        return self.response().headers['Content-length']
 
     def content(self):
-        return self.response.content
+        return self.response().content.__str__()
 
     def request_and_response_atividade(self):
         print("Status Code: {}\n"
