@@ -1,0 +1,21 @@
+1) Execute os passos abaixo e crie um projeto e uma aplicação:
+    a) Crie um projeto chamado mysite;
+    b) Crie o banco;
+    c) Suba o servidor;
+    d) Acesso o endereço da aplicação;
+    e) Crie uma aplicação chamada pools;
+    f) Registre a aplicação;
+    g) Defina uma view;
+    h) Defina uma url;
+    i) Suba o servidor;
+    j) Teste novamente o endereço da aplicação.
+
+2) Crie uma página de boas-vindas chamada index.html e exiba-a.
+
+3) Crie uma página question.html, uma classe Question com os campos "question_text"
+e pub_date, representando a data da publicação da pergunta.
+
+4) Altere os arquivos de views, rotas etc. para exibir essa página.
+
+5) Faça uma alteração na aplicação para que seja possível exibir 3 questões
+consultando pelo id a partir da barra de endereços do navegador.
