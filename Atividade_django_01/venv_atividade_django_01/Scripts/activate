@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\ACER\Desktop\Django_slide_01\venv_django_slide_01"
+VIRTUAL_ENV="C:\Users\ACER\Desktop\PROGRAMACAO-PARA-INTERNET\Atividade_django_01\venv_atividade_django_01"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
@@ -54,8 +54,8 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    if [ "x(venv_django_slide_01) " != x ] ; then
-	PS1="(venv_django_slide_01) ${PS1:-}"
+    if [ "x(venv_atividade_django_01) " != x ] ; then
+	PS1="(venv_atividade_django_01) ${PS1:-}"
     else
     if [ "`basename \"$VIRTUAL_ENV\"`" = "__" ] ; then
         # special case for Aspen magic directories

@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\ACER\Desktop\Django_slide_01\venv_django_slide_01"
+$env:VIRTUAL_ENV="C:\Users\ACER\Desktop\PROGRAMACAO-PARA-INTERNET\Atividade_django_01\venv_atividade_django_01"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name
@@ -35,7 +35,7 @@ if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     function global:_OLD_VIRTUAL_PROMPT {""}
     copy-item function:prompt function:_OLD_VIRTUAL_PROMPT
     function global:prompt {
-        Write-Host -NoNewline -ForegroundColor Green '(venv_django_slide_01) '
+        Write-Host -NoNewline -ForegroundColor Green '(venv_atividade_django_01) '
         _OLD_VIRTUAL_PROMPT
     }
 }

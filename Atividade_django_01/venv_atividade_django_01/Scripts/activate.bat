@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\ACER\Desktop\Django_slide_01\venv_django_slide_01"
+set "VIRTUAL_ENV=C:\Users\ACER\Desktop\PROGRAMACAO-PARA-INTERNET\Atividade_django_01\venv_atividade_django_01"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"
@@ -23,7 +23,7 @@ if defined _OLD_VIRTUAL_PYTHONHOME (
 )
 
 set "_OLD_VIRTUAL_PROMPT=%PROMPT%"
-set "PROMPT=(venv_django_slide_01) %PROMPT%"
+set "PROMPT=(venv_atividade_django_01) %PROMPT%"
 
 if defined PYTHONHOME (
     set "_OLD_VIRTUAL_PYTHONHOME=%PYTHONHOME%"

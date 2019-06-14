@@ -1,4 +1,4 @@
-#!C:\Users\ACER\Desktop\Django_slide_01\venv_django_slide_01\Scripts\python.exe
+#!C:\Users\ACER\Desktop\PROGRAMACAO-PARA-INTERNET\Atividade_django_01\venv_atividade_django_01\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==19.0.3','console_scripts','pip3.6'
 __requires__ = 'pip==19.0.3'
 import re
