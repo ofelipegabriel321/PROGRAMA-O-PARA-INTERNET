@@ -33,3 +33,27 @@ class Cobertura(models.Model):
 class Pizza(models.Model):
     nome = models.CharField(max_length=50)
     coberturas = models.ManyToManyField(Cobertura)
+
+    def __str__(self):
+        return self.nome
+
+
+# PASSO 06
+class CPF(models.Model):
+    numero = models.CharField(max_length = 9)
+
+    def calcular_dv(self):
+        return '00'
+
+    def __str__(self):
+        return self.numero + '-' + self.calcular_dv()
+
+
+class PessoaFisica(models.Model):
+    nome = models.CharField(max_length=100)
+    cpf = models.OneToOneField(CPF, related_name='pessoa_fisica')
+
+    def __str__(self):
+        return self.nome
+
+
