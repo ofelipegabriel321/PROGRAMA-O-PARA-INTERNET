@@ -3,14 +3,14 @@ from django.db import models
 
 # PASSO 01, 02 E 03
 
-#class Person(models.Model):
-#    SHIRT_SIZES = (
-#        ('S', 'Small'),
-#        ('M', 'Medium'),
-#        ('L', 'Large'),
-#    )
-#    name = models.CharField(max_length=30)
-#    shirt_size = models.CharField(max_length=1, choices=SHIRT_SIZES)
+class Person1(models.Model):
+    SHIRT_SIZES = (
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+    )
+    name = models.CharField(max_length=30)
+    shirt_size = models.CharField(max_length=1, choices=SHIRT_SIZES)
 
 
 # PASSO 04
@@ -41,7 +41,7 @@ class Pizza(models.Model):
 
 # PASSO 06
 class CPF(models.Model):
-    numero = models.CharField(max_length = 9)
+    numero = models.CharField(max_length=9)
 
     def calcular_dv(self):
         return '00'
@@ -52,14 +52,14 @@ class CPF(models.Model):
 
 class PessoaFisica(models.Model):
     nome = models.CharField(max_length=100)
-    cpf = models.OneToOneField(CPF, related_name='pessoa_fisica')
+    cpf = models.OneToOneField(CPF, on_delete=models.CASCADE, related_name='pessoa_fisica')
 
     def __str__(self):
         return self.nome
 
 
 # PASSO 07
-class Person(models.Model):
+class Person2(models.Model):
     name = models.CharField(max_length=128)
 
     def __str__(self):
@@ -68,18 +68,23 @@ class Person(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=128)
-    members = models.ManyToManyField(Person, through='Membership')
+    # PASSO 07.1 e 07.2
+    members = models.ManyToManyField(Person2, through='Membership', through_fields=('group', 'person'))
 
     def __str__(self):
         return self.name
 
 
 class Membership(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person2, on_delete=models.CASCADE)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     # PASSO 07.2
-    inviter = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="membership_invites")
+    inviter = models.ForeignKey(Person2, on_delete=models.CASCADE, related_name="membership_invites")
 
     date_joined = models.DateField()
     invite_reason = models.CharField(max_length=64)
 
+
+# PASSO 08
+class Perfil(models.Model):
+    friends = models.ManyToManyField("self")

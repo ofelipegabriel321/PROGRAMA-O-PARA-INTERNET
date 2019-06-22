@@ -81,19 +81,21 @@ PASSO 07:
         ENTRE "Person" E "Group".
 
     PASSO 07.2
-    CASO VOCÊ QUEIRA ADICIONAR OUTRO "models.ForeignKey" NA TABELA INTERMEDIÁRIA SEM COMPROMETER O
-    RELACIONAMENTO MUITOS PARA MUITOS ENTRE "Person" E "Group" VOCÊ DEVE PÔR NO ATRIBUTO DO TIPO
-    "models.ManyToManyField" DE "Group" O PARÂMETRO "through_fields" QUE SERVE PARA DIZER QUAIS DOS
-    ATRIBUTOS "models.ForeignKey" FAZEM PARTE DA RELAÇÃO MUITOS PARA MUITOS. NO CASO, DEVEM SER PASSADOS
-    OS VALORES DESSE MODO: "through_fields=('group', 'person')". NO CASO O ATRIBUTO DO TIPO
-    "models.ForeignKey" QUE ADICIONAMOS FOI "inviter = models.ForeignKey(Person,
-    on_delete=models.CASCADE, related_name="membership_invites")", QUE TEM ESSE
-    "related_name="membership_invites" PORQUE, COMO JÁ EXISTE UM ATRIBUTO DO TIPO "models.ForeignKey"
-    SETANDO PARA "Person", É NECESSÁRIO UTILIZAR ESSE PARÂMETRO "related_name".
+        CASO VOCÊ QUEIRA ADICIONAR OUTRO "models.ForeignKey" NA TABELA INTERMEDIÁRIA SEM COMPROMETER O
+        RELACIONAMENTO MUITOS PARA MUITOS ENTRE "Person" E "Group" VOCÊ DEVE PÔR NO ATRIBUTO DO TIPO
+        "models.ManyToManyField" DE "Group" O PARÂMETRO "through_fields" QUE SERVE PARA DIZER QUAIS DOS
+        ATRIBUTOS "models.ForeignKey" FAZEM PARTE DA RELAÇÃO MUITOS PARA MUITOS. NO CASO, DEVEM SER PASSADOS
+        OS VALORES DESSE MODO: "through_fields=('group', 'person')". NO CASO O ATRIBUTO DO TIPO
+        "models.ForeignKey" QUE ADICIONAMOS FOI "inviter = models.ForeignKey(Person,
+        on_delete=models.CASCADE, related_name="membership_invites")", QUE TEM ESSE
+        "related_name="membership_invites" PORQUE, COMO JÁ EXISTE UM ATRIBUTO DO TIPO "models.ForeignKey"
+        SETANDO PARA "Person", É NECESSÁRIO UTILIZAR ESSE PARÂMETRO "related_name".
 
-
-
-
-
-
+PASSO 08:
+    RELACIONAMENTO AUTORELACIONAMENTO.
+    É UM RELACIONAMENTO DE MUITOS PARA MUITOS ONDE UMA CLASSE/TABELA SE RELACIONA COM ELA MESMA.
+    USA-SE UM ATRIBUTO DO TIPO "models.ManyToManyField" QUE RECEBE OU O NOME DA PRÓPRIA TABELA OU
+    "self". VEJA O EXEMPLO NO MODEL "Perfil". POR PADRÃO OS AUTORELACIONAMENTOS SÃO SIMÉTRICOS
+    (PARÂMETRO "simetric=True"), OU SEJA, SE X É AMIGO DE Y, Y É AMIGO DE X. CASO NÃO HAJA SIMETRIA,
+    DEVE-SE DEFINIR O PARÂMETRO "simetric=False".
 
