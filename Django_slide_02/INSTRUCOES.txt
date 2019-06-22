@@ -1,0 +1,28 @@
+PASSO 01:
+    A CLASSE models NOS OFERECE O QUE É NECESSÁRIO PARA FAZER OS MODELOS NO DJANGO, COMO OS TIPOS
+    QUE SERÃO GERADOS NO ARQUIVO SQL (CharField, IntegerField, BooleanField, DateField, ETC). PODEM
+    SER INSERIDOS EM CADA ATRIBUTO OPCOES DE VALIDAÇÃO: "null" (SE 'TRUE', O ATRIBUTO ACEITARÁ VALORES
+    NULOS, O PADRÃO É 'FALSE'); "choices" QUANDO VOCÊ QUISER INSERIR ALGO NA TABELA POR MEIO DE UMA
+    ABREVIAÇÃO E COM VALORES FIXOS, USE O CHOICES, QUE SUBSTITUI A ABREVIAÇÃO ESCRITA POR VOCÊ PELA
+    OUTRA VERSÃO DA TUPLA (EX: FAÇA ANTES DO ATRIBUTO ISSO: 'SHIRT_SIZES = (('S', 'Small'),
+    ('M', 'Medium'), ('L', 'Large'),)', ENTÃO FAÇA O ATRIBUTO "shirt_size =
+    models.CharField(max_length=1, choices=SHIRT_SIZES)", ONDE É POSSIVEL OBTER O PRIMEIRO VALOR COM
+    "perfil.shirt_size" (OBS: TENHA JÁ UM Perfil SELECIONADO NESSA VARIÁVEL perfil) E O SEGUNDO VALOR
+    COM "perfil.get_shirt_size_display()"); "primary_key" QUANDO FOR 'TRUE' DEFINE O ATRIBUTO COMO
+    CHAVE PRIMÁRIA; "default" VALOR PADRÃO CASO O CAMPO NÃO SEJA PREENCHIDO.
+PASSO 02:
+    CONSTRUA A TABELA NO TERMINAL COM "python manage.py makemigrations" E A MATERIALIZE COM
+    "python manage.py migrate". ESSE PASSO SERÁ REPETIDO VÁRIAS VEZES AO LONGO DOS PRÓXIMOS PASSOS.
+    É ADICIONADO NA TABELA GERADA UM ATRIBUTO "id" COMO CHAVE PRIMÁRIA COM AUTOINCREMENTO. A TABELA
+    CRIADA TEM O NOME "mysite_person", QUE É A JUNÇÃO DO NOME DA APLICAÇÃO E DA CLASSE MODEL.
+PASSO 03:
+    ENTRE NO SHELL COM "python manage.py shell". LÁ VOCÊ PODE IMPORTAR TABELAS (EX: "from myapp.models
+    import Person") E POVOÁ-LAS (EX: "person = Person(first_name = 'ely', last_name='Miranda')" E DEPOIS
+    "person.save()" (OU APENAS COM "Person.objects.create(first_name = 'ely', last_name='Miranda')")).
+    TAMBÉM SÃO BASTANTE ÚTEIS ALGUMAS OPERAÇÕES COM TABELAS: "Person.objects.get(CONDICAO)" (RETORNANDO
+    APENAS O OBJETO QUE ENTRA NA CONDIÇÃO), "Person.objects.filter(CONDICAO)" (RETORNANDO UMA LISTA DE
+    OBJETOS QUE ENTRAM NA CONDIÇÃO), "Person.objects.all()" (RETORNANDO UMA LISTA COM TODOS OS OBJETOS).
+
+
+
+
