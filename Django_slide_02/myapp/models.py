@@ -21,3 +21,15 @@ class Car(models.Model):
     name = models.CharField(max_length=50)
     manufacter = models.ForeignKey(Manufacter, on_delete=models.CASCADE, related_name="cars")
 
+
+# PASSO 05
+class Cobertura(models.Model):
+    descricao = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.descricao
+
+
+class Pizza(models.Model):
+    nome = models.CharField(max_length=50)
+    coberturas = models.ManyToManyField(Cobertura)
