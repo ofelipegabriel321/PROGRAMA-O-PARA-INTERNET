@@ -1,0 +1,31 @@
+1) Na aplicação que está sendo utilizada para testes, considere os modelos abaixo:
+    class Blog(models.Model):
+        name = models.CharField(max_length = 50)
+
+    class Entry(models.Model):
+        headline = models.CharField(max_length = 60)
+        body_text = models.CharField(max_length = 255)
+        pub_date = models.DateTimeField()
+        blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+Gere os esquemas e escreva scripts que testem os métodos create(), remove(), add(), clear()
+e set(). Algum dos métodos "não funcionou"? Pesquise e Justifique.
+
+2) Modele em um diagrama de classes e implemente em usando Django models o seguinte
+estudo de caso adicionando eventuais atributos não mencionados:
+    a. Um usuário tem um ou mais perfis numa rede social;
+    b. Um perfil tem uma timeline;
+    c. Um perfil possui vários contatos como relacionamento;
+    d. Uma timeline pode ter várias postagens;
+    e. Uma postagem pode ter vários comentários;
+    f. Um comentário tem um perfil associado;
+    g. Uma postagem pode ter várias reações.
+    h. Uma reação possui um tipo: curtir, amar, rir, se impressionar, ficar triste ou se irritar;
+    i. Um perfil pode reagir a postagens, porém cada reação pode ter um peso. Ex: 10
+    curtidas. Assim, há a necessidade de um contador/peso na associação.
+
+Demais atributos:
+    – Usuário: id, email, senha, data de nascimento;
+    – Perfil: nome e usuario;
+    – Postagem: texto, data e perfil;
+    – Comentario: texto, data, perfil e postagem;
+    – Reacao: tipo, data, postagem, perfil e peso.

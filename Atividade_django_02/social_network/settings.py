@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'blog_app',
+    'social_network_app',
 ]
 
 MIDDLEWARE = [
